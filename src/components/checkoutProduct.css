@@ -1,0 +1,28 @@
+.checkoutProduct__starIcon{
+    color: orange;
+}
+
+.checkoutProduct{
+    display: flex;
+    margin: 15px 15px;
+    background-color: white;
+    max-width: 1000px;
+    
+}
+
+.checkoutProduct__info{
+    margin: 5px 10px;
+}
+.checkoutProduct > img{
+    max-height: 200px;
+    min-width: 100px;
+    object-fit: contain;
+}
+
+.checkoutProduct__info > button{
+    background-color: #f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    margin: 20px 0;
+}
