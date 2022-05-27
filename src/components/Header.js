@@ -10,7 +10,15 @@ import { getAuth, signOut } from "firebase/auth";
 function Header() {
     const[{basket, user}]=useStateValue();
     const uauth = getAuth();
+    const userNew = uauth.currentUser;
+
     console.log(basket);
+
+    if (userNew !== null) {
+    
+       const email = userNew.email;
+
+    }
 
     const login=()=>{
         
@@ -41,11 +49,11 @@ function Header() {
 
         {/* 4 Links */}
         <div className="header__nav">
-            {/* 1st Link  */}
-            <Link to={!user && "/login"} className="header__link">
+            {/* 1st Sign In Link  */}
+            <Link to={user? "/":"/login"} className="header__link">
             <div onClick={login} className="header__option">
-                <span className='header__optionLineOne'>Hello {user?.email}</span>
-                <span className='header__optionLineTwo'>{user? 'Sign Out' : 'Sign In'}</span>
+                <span className='header__optionLineOne'>Hello {userNew.email}</span>
+                <span className='header__optionLineTwo'>{userNew? 'Sign Out' : 'Sign In'}</span>
             </div>
             </Link>
 
